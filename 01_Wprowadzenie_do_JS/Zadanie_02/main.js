@@ -15,6 +15,13 @@ function testVars() {
 }
 
 
+
+
+
+console.log(dog);
+console.log(cat);
+console.log(chomik);
+
 /*
 Wnioski:
 
