@@ -45,7 +45,7 @@ emailLink.nextElementSibling.textContent = 'newemail@example.com';
 
 // 6. Pobierz do zmiennej klasę nagłówka.
 const headerElement = document.querySelector('header');
-const headerClass = headerElement.className; // Zapisz klasę do zmiennej
+const headerClass = headerElement.className.trim(); // Zapisz klasy do zmiennej i usuń białe znaki
 console.log('Klasa nagłówka:', headerClass);
 
 // 7. Usuń klasę z nagłówka.
@@ -53,4 +53,10 @@ headerElement.classList.remove(...headerElement.classList);
 
 // 8. Dodaj pobraną klasę do dowolnego innego elementu tekstowego na stronie.
 const textElement = document.querySelector('.promo-article-title');
-textElement.classList.add(headerClass);
+
+// Sprawdź, czy zmienna `headerClass` zawiera jakąkolwiek klasę
+if (headerClass.length > 0) {
+  textElement.classList.add(headerClass);
+} else {
+  console.warn('Nagłówek nie posiada klas, nic nie zostało dodane.');
+}
